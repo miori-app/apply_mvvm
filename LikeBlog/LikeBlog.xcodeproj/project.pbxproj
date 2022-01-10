@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		3D380EA02789C599001EFD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380E9F2789C599001EFD1C /* AppDelegate.swift */; };
 		3D380EA22789C599001EFD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EA12789C599001EFD1C /* SceneDelegate.swift */; };
-		3D380EA42789C599001EFD1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EA32789C599001EFD1C /* ViewController.swift */; };
-		3D380EA72789C599001EFD1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D380EA52789C599001EFD1C /* Main.storyboard */; };
 		3D380EA92789C59C001EFD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D380EA82789C59C001EFD1C /* Assets.xcassets */; };
 		3D380EAC2789C59C001EFD1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D380EAA2789C59C001EFD1C /* LaunchScreen.storyboard */; };
 		3D380EB72789C59C001EFD1C /* LikeBlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EB62789C59C001EFD1C /* LikeBlogTests.swift */; };
 		3D380EC12789C59C001EFD1C /* LikeBlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EC02789C59C001EFD1C /* LikeBlogUITests.swift */; };
 		3D380EC32789C59C001EFD1C /* LikeBlogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EC22789C59C001EFD1C /* LikeBlogUITestsLaunchTests.swift */; };
+		3DCA2984278C00980030DD26 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA2983278C00980030DD26 /* RxCocoa */; };
+		3DCA2986278C00980030DD26 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA2985278C00980030DD26 /* RxRelay */; };
+		3DCA2988278C00980030DD26 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA2987278C00980030DD26 /* RxSwift */; };
+		3DCA298B278C01380030DD26 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA298A278C01380030DD26 /* Kingfisher */; };
+		3DCA298E278C01800030DD26 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCA298D278C01800030DD26 /* SnapKit */; };
+		3DCA2990278C02620030DD26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA298F278C02620030DD26 /* MainViewController.swift */; };
+		3DCA2992278C03F10030DD26 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCA2991278C03F10030DD26 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +44,6 @@
 		3D380E9C2789C599001EFD1C /* LikeBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LikeBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D380E9F2789C599001EFD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D380EA12789C599001EFD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D380EA32789C599001EFD1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D380EA62789C599001EFD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D380EA82789C59C001EFD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D380EAB2789C59C001EFD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D380EAD2789C59C001EFD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,8 @@
 		3D380EBC2789C59C001EFD1C /* LikeBlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LikeBlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D380EC02789C59C001EFD1C /* LikeBlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeBlogUITests.swift; sourceTree = "<group>"; };
 		3D380EC22789C59C001EFD1C /* LikeBlogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeBlogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DCA298F278C02620030DD26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3DCA2991278C03F10030DD26 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCA298B278C01380030DD26 /* Kingfisher in Frameworks */,
+				3DCA2988278C00980030DD26 /* RxSwift in Frameworks */,
+				3DCA2986278C00980030DD26 /* RxRelay in Frameworks */,
+				3DCA2984278C00980030DD26 /* RxCocoa in Frameworks */,
+				3DCA298E278C01800030DD26 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,11 +111,11 @@
 			children = (
 				3D380E9F2789C599001EFD1C /* AppDelegate.swift */,
 				3D380EA12789C599001EFD1C /* SceneDelegate.swift */,
-				3D380EA32789C599001EFD1C /* ViewController.swift */,
-				3D380EA52789C599001EFD1C /* Main.storyboard */,
 				3D380EA82789C59C001EFD1C /* Assets.xcassets */,
 				3D380EAA2789C59C001EFD1C /* LaunchScreen.storyboard */,
 				3D380EAD2789C59C001EFD1C /* Info.plist */,
+				3DCA298F278C02620030DD26 /* MainViewController.swift */,
+				3DCA2991278C03F10030DD26 /* SearchBar.swift */,
 			);
 			path = LikeBlog;
 			sourceTree = "<group>";
@@ -143,6 +153,13 @@
 			dependencies = (
 			);
 			name = LikeBlog;
+			packageProductDependencies = (
+				3DCA2983278C00980030DD26 /* RxCocoa */,
+				3DCA2985278C00980030DD26 /* RxRelay */,
+				3DCA2987278C00980030DD26 /* RxSwift */,
+				3DCA298A278C01380030DD26 /* Kingfisher */,
+				3DCA298D278C01800030DD26 /* SnapKit */,
+			);
 			productName = LikeBlog;
 			productReference = 3D380E9C2789C599001EFD1C /* LikeBlog.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +232,11 @@
 				Base,
 			);
 			mainGroup = 3D380E932789C599001EFD1C;
+			packageReferences = (
+				3DCA2982278C00980030DD26 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3DCA2989278C01380030DD26 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3DCA298C278C01800030DD26 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3D380E9D2789C599001EFD1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +255,6 @@
 			files = (
 				3D380EAC2789C59C001EFD1C /* LaunchScreen.storyboard in Resources */,
 				3D380EA92789C59C001EFD1C /* Assets.xcassets in Resources */,
-				3D380EA72789C599001EFD1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D380EA42789C599001EFD1C /* ViewController.swift in Sources */,
+				3DCA2990278C02620030DD26 /* MainViewController.swift in Sources */,
+				3DCA2992278C03F10030DD26 /* SearchBar.swift in Sources */,
 				3D380EA02789C599001EFD1C /* AppDelegate.swift in Sources */,
 				3D380EA22789C599001EFD1C /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +319,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D380EA52789C599001EFD1C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D380EA62789C599001EFD1C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D380EAA2789C59C001EFD1C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -624,6 +638,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DCA2982278C00980030DD26 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		3DCA2989278C01380030DD26 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		3DCA298C278C01800030DD26 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DCA2983278C00980030DD26 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA2982278C00980030DD26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		3DCA2985278C00980030DD26 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA2982278C00980030DD26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		3DCA2987278C00980030DD26 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA2982278C00980030DD26 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		3DCA298A278C01380030DD26 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA2989278C01380030DD26 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		3DCA298D278C01800030DD26 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DCA298C278C01800030DD26 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D380E942789C599001EFD1C /* Project object */;
 }
