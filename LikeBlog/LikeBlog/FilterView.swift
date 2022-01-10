@@ -34,6 +34,9 @@ class FilterView : UITableViewHeaderFooterView {
     }
     
     private func bind() {
+        sortBtn.rx.tap
+            .bind(to: sortBtnTapped)
+            .disposed(by: disposeBag)
     }
     
     private func attribute() {
