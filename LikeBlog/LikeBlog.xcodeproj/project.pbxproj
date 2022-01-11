@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D1A85D5278C769200027E55 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1A85D4278C769200027E55 /* FilterView.swift */; };
+		3D204D81278DD304005635DE /* BlogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D204D80278DD304005635DE /* BlogList.swift */; };
+		3D204D83278DD313005635DE /* BlogListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D204D82278DD313005635DE /* BlogListCell.swift */; };
+		3D204D87278DD38A005635DE /* BlogListCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D204D86278DD38A005635DE /* BlogListCellData.swift */; };
 		3D380EA02789C599001EFD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380E9F2789C599001EFD1C /* AppDelegate.swift */; };
 		3D380EA22789C599001EFD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D380EA12789C599001EFD1C /* SceneDelegate.swift */; };
 		3D380EA92789C59C001EFD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D380EA82789C59C001EFD1C /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		3D1A85D4278C769200027E55 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		3D204D80278DD304005635DE /* BlogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogList.swift; sourceTree = "<group>"; };
+		3D204D82278DD313005635DE /* BlogListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCell.swift; sourceTree = "<group>"; };
+		3D204D86278DD38A005635DE /* BlogListCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogListCellData.swift; sourceTree = "<group>"; };
 		3D380E9C2789C599001EFD1C /* LikeBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LikeBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D380E9F2789C599001EFD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D380EA12789C599001EFD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D204D84278DD34E005635DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DCA298F278C02620030DD26 /* MainViewController.swift */,
+				3DCA2991278C03F10030DD26 /* SearchBar.swift */,
+				3D1A85D4278C769200027E55 /* FilterView.swift */,
+				3D204D80278DD304005635DE /* BlogList.swift */,
+				3D204D82278DD313005635DE /* BlogListCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D204D85278DD373005635DE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3D204D86278DD38A005635DE /* BlogListCellData.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		3D380E932789C599001EFD1C = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +142,8 @@
 				3D380EA82789C59C001EFD1C /* Assets.xcassets */,
 				3D380EAA2789C59C001EFD1C /* LaunchScreen.storyboard */,
 				3D380EAD2789C59C001EFD1C /* Info.plist */,
-				3DCA298F278C02620030DD26 /* MainViewController.swift */,
-				3DCA2991278C03F10030DD26 /* SearchBar.swift */,
-				3D1A85D4278C769200027E55 /* FilterView.swift */,
+				3D204D84278DD34E005635DE /* View */,
+				3D204D85278DD373005635DE /* Entity */,
 			);
 			path = LikeBlog;
 			sourceTree = "<group>";
@@ -283,6 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DCA2990278C02620030DD26 /* MainViewController.swift in Sources */,
+				3D204D83278DD313005635DE /* BlogListCell.swift in Sources */,
+				3D204D81278DD304005635DE /* BlogList.swift in Sources */,
+				3D204D87278DD38A005635DE /* BlogListCellData.swift in Sources */,
 				3DCA2992278C03F10030DD26 /* SearchBar.swift in Sources */,
 				3D380EA02789C599001EFD1C /* AppDelegate.swift in Sources */,
 				3D1A85D5278C769200027E55 /* FilterView.swift in Sources */,
