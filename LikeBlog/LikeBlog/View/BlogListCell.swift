@@ -15,6 +15,8 @@ class BlogListCell : UITableViewCell {
     let titleLabel = UILabel()
     let datetimeLabel = UILabel()
     
+    static let registerID = "\(BlogListCell.self)"
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
