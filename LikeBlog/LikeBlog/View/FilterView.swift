@@ -51,7 +51,7 @@ class FilterView : UITableViewHeaderFooterView {
         sortBtn.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview().inset(12)
-            $0.width.height.equalTo(28)
+            //$0.width.height.equalTo(28)
         }
         
         bottomBorder.snp.makeConstraints {
