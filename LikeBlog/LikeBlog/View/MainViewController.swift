@@ -17,6 +17,9 @@ class MainViewController: UIViewController {
     let searchBar = SearchBar()
     let listView = BlogListView()
     
+    // alert action 탭 했을때 이벤트 확인하기위함
+    let alertActionTapped = PublishRelay<AlertAction>()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -31,7 +34,20 @@ class MainViewController: UIViewController {
     
     // for Rx
     private func bind() {
-        
+        //listView.headerView.sortBtnTapped 이벤트를 -> alert으로
+        let alertSheetForSorting = listView.headerView.sortBtnTapped
+            .map { _ -> Alert in
+                return (title: nil, message: nil, actions : [.title, .datetime, .cancel], style : .actionSheet)
+            }
+        alertSheetForSorting.asSignal(onErrorSignalWith: .empty())
+        //. flatMapLatest는 새로운 스트림을 만들고 동작을 수행하는 도중, 새로운 아이템이 방출되게 된다면, 이전 스트림을 dispose 하고 새롭게 들어오게 되는 아이템에 대해 스트림을 생성하여 동작
+            .flatMapLatest { alert -> Signal<AlertAction> in
+                let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
+                return self.presentAlertController(alertController, actions: alert.actions)
+            }
+            //구독
+            .emit(to: alertActionTapped)
+            .disposed(by: disposeBag)
     }
     
     // view 꾸미기
@@ -63,7 +79,7 @@ class MainViewController: UIViewController {
 
 // Alert
 extension MainViewController {
-    typealias Alert = (title: String?, message: String?, actions : [AlertAction], style : UIAlertAction.Style)
+    typealias Alert = (title: String?, message: String?, actions : [AlertAction], style : UIAlertController.Style)
     
     enum AlertAction : AlertActionConvertible {
         //액션들을 선언
