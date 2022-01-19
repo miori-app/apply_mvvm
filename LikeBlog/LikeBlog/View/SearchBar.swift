@@ -15,16 +15,16 @@ class SearchBar : UISearchBar {
     
     let searchBtn = UIButton()
     
-    // search bar btn tap event
-    // onNext 만 받고 eroor를 받지 않아
-    let searchBtnTapped = PublishRelay<Void>()
-    
-    // search bar 외부로 이벤트 내보내기 (text)
-    var shouldLoadResult = Observable<String>.of("")
+// MARK: - mvvm 적용
+//    // search bar btn tap event
+//    // onNext 만 받고 eroor를 받지 않아
+//    let searchBtnTapped = PublishRelay<Void>()
+//
+//    // search bar 외부로 이벤트 내보내기 (text)
+//    var shouldLoadResult = Observable<String>.of("")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        bind()
         attribute()
         layout()
     }
@@ -33,7 +33,12 @@ class SearchBar : UISearchBar {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind() {
+    func bind(_ viewModel : SearchBarViewModel) {
+        print("실행됨??")
+        // text 를 viewModel 에 전달
+        self.rx.text
+            .bind(to: viewModel.queryText)
+            .disposed(by: disposeBag)
         // searchbar 의 search btn tapped (keyboard)
         // custom btn
         Observable
@@ -42,19 +47,21 @@ class SearchBar : UISearchBar {
                 self.rx.searchButtonClicked.asObservable(),
                 searchBtn.rx.tap.asObservable()
             )
-            .bind(to: searchBtnTapped)
+            .bind(to: viewModel.searchBtnTapped)
             .disposed(by: disposeBag)
         
-        searchBtnTapped
+        viewModel.searchBtnTapped
             .asSignal()
             .emit(to: self.rx.endEditing)
             .disposed(by: disposeBag)
         
+        // MVVM 적요으로 이동
+        // view가 직접적으로 관여x
         // searchBtnTapped 가 트리거 역할
-        self.shouldLoadResult = searchBtnTapped
-            .withLatestFrom(self.rx.text) { $1 ?? "" }
-            .filter { !$0.isEmpty }
-            .distinctUntilChanged()
+//        self.shouldLoadResult = searchBtnTapped
+//            .withLatestFrom(self.rx.text) { $1 ?? "" }
+//            .filter { !$0.isEmpty }
+//            .distinctUntilChanged()
     }
     
     private func attribute() {
@@ -73,7 +80,7 @@ class SearchBar : UISearchBar {
         
         searchBtn.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(12 )
+            $0.trailing.equalToSuperview().inset(12)
         }
     }
 }
