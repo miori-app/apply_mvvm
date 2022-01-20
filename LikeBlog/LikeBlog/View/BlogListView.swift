@@ -29,7 +29,8 @@ class BlogListView : UITableView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind(_ viewModel : BlogListViewModel) {
+    func bind(_ viewModel : BlogListViewModel) {
+        headerView.bind(viewModel.filterViewModel)
         //셀 데이터를 받아서, Observable 어떻게 처리할지
         // mainViewController가 celldata 잘 전달해주면, 이걸 어떻게 표현할지
         // tableview delegate : cellForRowAt
