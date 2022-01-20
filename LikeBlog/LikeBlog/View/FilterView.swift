@@ -16,15 +16,16 @@ class FilterView : UITableViewHeaderFooterView {
     let sortBtn = UIButton()
     let bottomBorder = UIView()
     
-    // filter view 외부에서 관찰
-    // 나 눌렸어 ~
-    // Relay 객체는 .completed, .error를 발생하지 않고 Dispose되기 전까지 계속 작동하기 때문에 UI 등에서 사용하기 적절
-    let sortBtnTapped = PublishRelay<Void>()
+    // MVVM  적용
+//    // filter view 외부에서 관찰
+//    // 나 눌렸어 ~
+//    // Relay 객체는 .completed, .error를 발생하지 않고 Dispose되기 전까지 계속 작동하기 때문에 UI 등에서 사용하기 적절
+//    let sortBtnTapped = PublishRelay<Void>()
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         
-        bind()
+        //bind()
         attribute()
         layout()
     }
@@ -33,9 +34,9 @@ class FilterView : UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func bind() {
+    func bind(_ viewModel : FilterViewModel) {
         sortBtn.rx.tap
-            .bind(to: sortBtnTapped)
+            .bind(to: viewModel.sortBtnTapped)
             .disposed(by: disposeBag)
     }
     
