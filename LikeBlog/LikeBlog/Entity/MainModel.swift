@@ -41,8 +41,8 @@ struct MainModel {
                 let thumbnailURL = URL(string: $0.thumbnail ?? "")
                 return BlogListCellData(
                     thumbnailURL: thumbnailURL,
-                    name: $0.blogname,
-                    title: $0.title,
+                    name: $0.blogname?.deleteMarkDown(),
+                    title: $0.title?.deleteMarkDown(),
                     datetime: $0.datetime
                 )
             }
