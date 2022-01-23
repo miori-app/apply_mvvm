@@ -23,5 +23,12 @@ struct SearchBarViewModel {
             .withLatestFrom(queryText) { $1 ?? "" }
             .filter { !$0.isEmpty }
             .distinctUntilChanged()
+        
+        //  텍스트 필드 비어있을때
+        let searchMsg = queryText
+            .map { $0?.isEmpty ?? true }
+            .startWith(true)
+            .map { $0 ? "검색어를 입력해주세요" : ""} 
+        
     }
 }
