@@ -20,11 +20,28 @@ struct MainViewModel {
     
     let shouldPresentAlert : Signal<MainViewController.Alert>
     
+    
     init(model : MainModel = MainModel()) {
+        
+        // MARK: 빈 검색어 일때, Alert
+        let emptyAlertMsg = searchBarViewModel.searchBtnTapped
+        //버튼 이벤트와 쿼리텍스트($1) 스트림
+            .withLatestFrom(searchBarViewModel.queryText) { $1 ?? "" }
+        // empty 일때만
+            .filter { $0.isEmpty }
+            .map { _ -> MainViewController.Alert in
+                return (
+                    title : "⚠️",
+                    message : "검색어를 입력해주세요",
+                    actions : [.confirm],
+                    style : .alert
+                )
+            }
+        
         // searchBar 에서 shouldLoadResult Observable에서 이벤트 나오면 작동
         let blogResult = searchBarViewModel.shouldLoadResult
             .flatMapLatest (model.searchBlog)
-            // stream 새로 만드는게 아니라 공유할거라서
+        // stream 새로 만드는게 아니라 공유할거라서
             .share()
         
         // 다음 블로그 값만 넣어주기
@@ -76,7 +93,8 @@ struct MainViewModel {
             }
         
         self.shouldPresentAlert = Observable
-            .merge(alertForMessage, alertSheetForSorting)
+            .merge(alertForMessage, alertSheetForSorting
+                   , emptyAlertMsg)
             .asSignal(onErrorSignalWith: .empty())
     }
 }
