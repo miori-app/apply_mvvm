@@ -9,6 +9,9 @@ Podfile.lock
 ###custom secret folder###
 Secret/
 
+## Frameworks
+Frameworks/
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 
