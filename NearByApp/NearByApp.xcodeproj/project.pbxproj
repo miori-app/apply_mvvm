@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F873B279C4DA9009FD93B /* AppDelegate.swift */; };
 		3D7F873E279C4DA9009FD93B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F873D279C4DA9009FD93B /* SceneDelegate.swift */; };
-		3D7F8740279C4DA9009FD93B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F873F279C4DA9009FD93B /* ViewController.swift */; };
-		3D7F8743279C4DA9009FD93B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F8741279C4DA9009FD93B /* Main.storyboard */; };
 		3D7F8745279C4DAA009FD93B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F8744279C4DAA009FD93B /* Assets.xcassets */; };
 		3D7F8748279C4DAA009FD93B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F8746279C4DAA009FD93B /* LaunchScreen.storyboard */; };
 		3D7F8753279C4DAB009FD93B /* NearByAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F8752279C4DAB009FD93B /* NearByAppTests.swift */; };
@@ -49,6 +47,8 @@
 		3DED31F027A054BB00B351BB /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DED31D427A054BB00B351BB /* map_pin_shadow.png */; };
 		3DED31F127A054BB00B351BB /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DED31D527A054BB00B351BB /* DaumMap.framework */; };
 		3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F227A0554000B351BB /* DetailCellData.swift */; };
+		3DED31F627A18FC700B351BB /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F527A18FC700B351BB /* LocationInfoViewController.swift */; };
+		3DED31F927A1900100B351BB /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F827A1900100B351BB /* LocationInfoViewModel.swift */; };
 		3DFE3C0C27A0422400D5C101 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0B27A0422400D5C101 /* OpenGLES.framework */; };
 		3DFE3C0E27A0426E00D5C101 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0D27A0426E00D5C101 /* CoreLocation.framework */; };
 		3DFE3C1027A0427900D5C101 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0F27A0427900D5C101 /* QuartzCore.framework */; };
@@ -77,8 +77,6 @@
 		3D7F8738279C4DA9009FD93B /* NearByApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearByApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7F873B279C4DA9009FD93B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7F873D279C4DA9009FD93B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D7F873F279C4DA9009FD93B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D7F8742279C4DA9009FD93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D7F8744279C4DAA009FD93B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D7F8747279C4DAA009FD93B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7F8749279C4DAA009FD93B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +122,8 @@
 		3DED31D427A054BB00B351BB /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		3DED31D527A054BB00B351BB /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		3DED31F227A0554000B351BB /* DetailCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellData.swift; sourceTree = "<group>"; };
+		3DED31F527A18FC700B351BB /* LocationInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewController.swift; sourceTree = "<group>"; };
+		3DED31F827A1900100B351BB /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
 		3DFE3C0B27A0422400D5C101 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3DFE3C0D27A0426E00D5C101 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3DFE3C0F27A0427900D5C101 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -193,11 +193,11 @@
 		3D7F873A279C4DA9009FD93B /* NearByApp */ = {
 			isa = PBXGroup;
 			children = (
+				3DED31F727A18FED00B351BB /* ViewModel */,
+				3DED31F427A18FB200B351BB /* ViewController */,
 				3D7F873B279C4DA9009FD93B /* AppDelegate.swift */,
 				3D7F873D279C4DA9009FD93B /* SceneDelegate.swift */,
-				3D7F873F279C4DA9009FD93B /* ViewController.swift */,
 				3DFE3C4027A04C0300D5C101 /* Entities */,
-				3D7F8741279C4DA9009FD93B /* Main.storyboard */,
 				3D7F8744279C4DAA009FD93B /* Assets.xcassets */,
 				3D7F8746279C4DAA009FD93B /* LaunchScreen.storyboard */,
 				3D7F8749279C4DAA009FD93B /* Info.plist */,
@@ -281,6 +281,22 @@
 				3DED31C827A054BB00B351BB /* MTMapCircle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		3DED31F427A18FB200B351BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DED31F527A18FC700B351BB /* LocationInfoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DED31F727A18FED00B351BB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DED31F827A1900100B351BB /* LocationInfoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3DFE3C0A27A0422400D5C101 /* Frameworks */ = {
@@ -438,7 +454,6 @@
 				3DED31E927A054BB00B351BB /* noimage256.png in Resources */,
 				3DED31D827A054BB00B351BB /* shadow_balloon.png in Resources */,
 				3D7F8745279C4DAA009FD93B /* Assets.xcassets in Resources */,
-				3D7F8743279C4DA9009FD93B /* Main.storyboard in Resources */,
 				3DED31EF27A054BB00B351BB /* daum_th_line.png in Resources */,
 				3DED31D927A054BB00B351BB /* map_pinup.png in Resources */,
 			);
@@ -465,11 +480,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7F8740279C4DA9009FD93B /* ViewController.swift in Sources */,
 				3DFE3C3F27A04BFD00D5C101 /* LocationResponse.swift in Sources */,
 				3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */,
 				3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */,
 				3D7F873E279C4DA9009FD93B /* SceneDelegate.swift in Sources */,
+				3DED31F627A18FC700B351BB /* LocationInfoViewController.swift in Sources */,
+				3DED31F927A1900100B351BB /* LocationInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,14 +522,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D7F8741279C4DA9009FD93B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D7F8742279C4DA9009FD93B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D7F8746279C4DAA009FD93B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -660,7 +668,6 @@
 				INFOPLIST_FILE = NearByApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -694,7 +701,6 @@
 				INFOPLIST_FILE = NearByApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
