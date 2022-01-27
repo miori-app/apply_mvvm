@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 struct LocationInfoViewModel {
+    let disposeBag = DisposeBag()
     
+    let currentLocationBtnTapped = PublishRelay<Void>()
 }

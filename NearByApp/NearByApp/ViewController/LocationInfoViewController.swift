@@ -6,8 +6,107 @@
 //
 
 import UIKit
+import SnapKit
+import RxSwift
+import RxCocoa
+import CoreLocation
 
 class LocationInfoViewController : UIViewController {
+    
+    let disposeBag = DisposeBag()
+    let locationManger = CLLocationManager()
+    let mapView = MTMapView()
+    let currentLocBtn = UIButton()
+    let detailList = UITableView()
+    let viewModel = LocationInfoViewModel()
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mapView.delegate = self
+        locationManger.delegate = self
+        
+        bind(viewModel)
+        attribute()
+        layout()
+    }
+}
+
+extension LocationInfoViewController {
+    private func bind(_ viewModel : LocationInfoViewModel) {
+        currentLocBtn.rx.tap
+            .bind(to: viewModel.currentLocationBtnTapped)
+            .disposed(by: disposeBag)
+    }
+
+    private func attribute() {
+        self.title = "내 근처 카페 찾기"
+        view.backgroundColor = .white
+        
+        mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
+        currentLocBtn.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        currentLocBtn.backgroundColor = .white
+        currentLocBtn.layer.cornerRadius = 20
+    }
+    
+    private func layout() {
+        [mapView, currentLocBtn, detailList].forEach {
+            view.addSubview($0)
+        }
+        mapView.snp.makeConstraints {
+            //navi 상단 밑에 위치
+            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.snp.centerY).offset(100)
+        }
+        currentLocBtn.snp.makeConstraints {
+            $0.bottom.equalTo(detailList.snp.top).offset(-12)
+            $0.leading.equalToSuperview().offset(12)
+            $0.width.height.equalTo(40)
+        }
+        detailList.snp.makeConstraints {
+            $0.centerX.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.top.equalTo(mapView.snp.bottom)
+        }
+    }
+}
+
+
+extension LocationInfoViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways,
+                .authorizedWhenInUse,
+                .notDetermined:
+            return
+        default :
+            //에러모델 작성후, 에러반환
+            return 
+        }
+    }
+}
+
+extension LocationInfoViewController : MTMapViewDelegate {
+    func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+        #if DEBUG
+        //디버그 모드일때, 시뮬레이터는 위치 모르니까
+        #else
+        //실제 위치 알때
+        #endif
+    }
+    
+    //MARK: Map 움직이고 난뒤
+    func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
+        //센터 포인터 다시 필요
+    }
+    
+    //MARK: Pin을 선택할때 마다 MTMapPOIItem 정보제공
+    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        // 위치 넘겨주기
+        return false
+    }
+    
+    func mapView(_ mapView: MTMapView!, failedUpdatingCurrentLocationWithError error: Error!) {
+        //제대로된 위치 못 불러올때 에러 해결
     }
 }
