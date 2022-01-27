@@ -20,6 +20,7 @@
 		3D9A4A9127A2B6BA00DB2CA2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9027A2B6BA00DB2CA2 /* RxRelay */; };
 		3D9A4A9327A2B6BA00DB2CA2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9227A2B6BA00DB2CA2 /* RxSwift */; };
 		3D9A4A9527A2B6BA00DB2CA2 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9427A2B6BA00DB2CA2 /* RxTest */; };
+		3D9A4A9727A2C3AA00DB2CA2 /* MTMapViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A4A9627A2C3AA00DB2CA2 /* MTMapViewError.swift */; };
 		3DED31AB27A0512600B351BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1327A0429500D5C101 /* libsqlite3.tbd */; };
 		3DED31AC27A0513C00B351BB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1127A0428300D5C101 /* libc++.tbd */; };
 		3DED31AD27A0514500B351BB /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1227A0428C00D5C101 /* libxml2.tbd */; };
@@ -91,6 +92,7 @@
 		3D7F8758279C4DAB009FD93B /* NearByAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NearByAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7F875C279C4DAB009FD93B /* NearByAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByAppUITests.swift; sourceTree = "<group>"; };
 		3D7F875E279C4DAB009FD93B /* NearByAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3D9A4A9627A2C3AA00DB2CA2 /* MTMapViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMapViewError.swift; sourceTree = "<group>"; };
 		3DED31B127A054BB00B351BB /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		3DED31B227A054BB00B351BB /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		3DED31B327A054BB00B351BB /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			children = (
 				3DFE3C3E27A04BFD00D5C101 /* LocationResponse.swift */,
 				3DED31F227A0554000B351BB /* DetailCellData.swift */,
+				3D9A4A9627A2C3AA00DB2CA2 /* MTMapViewError.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DFE3C3F27A04BFD00D5C101 /* LocationResponse.swift in Sources */,
+				3D9A4A9727A2C3AA00DB2CA2 /* MTMapViewError.swift in Sources */,
 				3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */,
 				3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */,
 				3D7F873E279C4DA9009FD93B /* SceneDelegate.swift in Sources */,
