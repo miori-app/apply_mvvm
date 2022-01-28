@@ -37,6 +37,16 @@ extension LocationInfoViewController {
         currentLocBtn.rx.tap
             .bind(to: viewModel.currentLocationBtnTapped)
             .disposed(by: disposeBag)
+        
+        //signal binding
+        
+        //mapview 에다가 center 값 받았으니,
+        //해당값은 center로 해서 맵 이동시켜
+        //viewModel.setMapCenter
+            .emit()
+        
+        //viewModel.errorMessage
+            .emit()
     }
 
     private func attribute() {
@@ -81,6 +91,7 @@ extension LocationInfoViewController : CLLocationManagerDelegate {
             return
         default :
             //에러모델 작성후, 에러반환
+            viewModel.mapViewError.accept(MTMapViewError.locationAuthorizationDenied.errorDescription)
             return 
         }
     }
@@ -90,23 +101,28 @@ extension LocationInfoViewController : MTMapViewDelegate {
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
         #if DEBUG
         //디버그 모드일때, 시뮬레이터는 위치 모르니까
+        viewModel.currentLocation.accept(MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.394225, longitude: 127.110341)))
         #else
         //실제 위치 알때
+        viewModel.currentLocation.accept(location)
         #endif
     }
     
     //MARK: Map 움직이고 난뒤
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
         //센터 포인터 다시 필요
+        viewModel.mapCenterPoint.accept(mapCenterPoint)
     }
     
     //MARK: Pin을 선택할때 마다 MTMapPOIItem 정보제공
     func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
         // 위치 넘겨주기
+        viewModel.selectPOIItem.accept(poiItem)
         return false
     }
     
     func mapView(_ mapView: MTMapView!, failedUpdatingCurrentLocationWithError error: Error!) {
         //제대로된 위치 못 불러올때 에러 해결
+        viewModel.mapViewError.accept(error.localizedDescription)
     }
 }
