@@ -42,11 +42,14 @@ extension LocationInfoViewController {
         
         //mapview 에다가 center 값 받았으니,
         //해당값은 center로 해서 맵 이동시켜
-        //viewModel.setMapCenter
-            .emit()
+        viewModel.setMapCenter
+            .emit(to: mapView.rx.setMapCenterPoint)
+            .disposed(by: disposeBag)
         
-        //viewModel.errorMessage
-            .emit()
+        viewModel.errorMessage
+            //에러 메세지를 받을때마다 실행됨
+            .emit(to: self.rx.presentAlert)
+            .disposed(by: disposeBag)
     }
 
     private func attribute() {
