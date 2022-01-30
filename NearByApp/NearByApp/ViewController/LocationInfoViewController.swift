@@ -18,6 +18,7 @@ class LocationInfoViewController : UIViewController {
     let mapView = MTMapView()
     let currentLocBtn = UIButton()
     let detailList = UITableView()
+    let detailListBackgroundView = DetailListBackgroundView()
     let viewModel = LocationInfoViewModel()
     
     override func viewDidLoad() {
@@ -50,6 +51,35 @@ extension LocationInfoViewController {
             //에러 메세지를 받을때마다 실행됨
             .emit(to: self.rx.presentAlert)
             .disposed(by: disposeBag)
+        
+        //detailListBackgroundView viewModel추가
+        detailListBackgroundView.bind(viewModel.detailListBackgroundViewModel)
+        
+        viewModel.detailListCellData
+            .drive(detailList.rx.items) {
+                tv, row, data in
+                let cell = tv.dequeueReusableCell(withIdentifier: DetailListTableViewCell.registerID, for: IndexPath(row: row, section: 0)) as! DetailListTableViewCell
+                cell.setData(data)
+                return cell
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.detailListCellData
+            .map { $0.compactMap {$0.point}}
+        //mapView형식에서 핑뿌려주기
+            .drive(self.rx.addPOIItemRx)
+            .disposed(by: disposeBag)
+        
+        viewModel.scrollToSelectedLocation
+        //scrollToSelectedLocation를 받았을때
+        //emit 뭘할지
+            .emit(to: self.rx.showSelectedLocation)
+            .disposed(by: disposeBag)
+        
+        detailList.rx.itemSelected
+            .map {$0.row}
+            .bind(to: viewModel.detailListItemSelected)
+            .disposed(by: disposeBag)
     }
 
     private func attribute() {
@@ -60,6 +90,11 @@ extension LocationInfoViewController {
         currentLocBtn.setImage(UIImage(systemName: "location.fill"), for: .normal)
         currentLocBtn.backgroundColor = .white
         currentLocBtn.layer.cornerRadius = 20
+        
+        //cell register
+        detailList.register(DetailListTableViewCell.self, forCellReuseIdentifier: DetailListTableViewCell.registerID)
+        detailList.separatorStyle = .none
+        detailList.backgroundView = detailListBackgroundView
     }
     
     private func layout() {
