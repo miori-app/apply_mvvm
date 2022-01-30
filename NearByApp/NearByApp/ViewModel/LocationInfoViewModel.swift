@@ -24,7 +24,7 @@ struct LocationInfoViewModel {
     let errorMessage : Signal<String>
     
     //tableView에 뿌리기 위해
-    //let detailListCellData : Driver<[DetailCellData]>
+    let detailListCellData : Driver<[DetailCellData]>
     //핑 선택시 테이블뷰 셀 인덱스로 이동위해
     let scrollToSelectedLocation : Signal<Int>
     
@@ -75,7 +75,7 @@ struct LocationInfoViewModel {
         errorMessage = mapViewError.asObservable()
             .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요")
         
-        //detailListCellData
+        detailListCellData = Driver.just([])
         
         //selectPOIItem : 핑을 선택했을때 발생하는 이벤트
         scrollToSelectedLocation = selectPOIItem

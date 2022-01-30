@@ -9,6 +9,7 @@ import UIKit
 
 class DetailListTableViewCell: UITableViewCell {
 
+    static let registerID = "\(DetailListTableViewCell.self)"
     let placeNameLabel = UILabel()
     let addressLabel = UILabel()
     let distanceLabel = UILabel()
