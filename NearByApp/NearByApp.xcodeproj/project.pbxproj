@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D141BB227A6BB73003A13D9 /* DetailListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D141BB127A6BB73003A13D9 /* DetailListTableViewCell.swift */; };
 		3D489D9927A5022400634E6E /* MTMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D489D9827A5022400634E6E /* MTMapView+Rx.swift */; };
 		3D489D9B27A5062000634E6E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D489D9A27A5062000634E6E /* UIViewController+Rx.swift */; };
 		3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F873B279C4DA9009FD93B /* AppDelegate.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D141BB127A6BB73003A13D9 /* DetailListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListTableViewCell.swift; sourceTree = "<group>"; };
 		3D489D9827A5022400634E6E /* MTMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTMapView+Rx.swift"; sourceTree = "<group>"; };
 		3D489D9A27A5062000634E6E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		3D7F8738279C4DA9009FD93B /* NearByApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearByApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D141BB027A6BB55003A13D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D141BB127A6BB73003A13D9 /* DetailListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3D489D9727A5020900634E6E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +230,7 @@
 		3D7F873A279C4DA9009FD93B /* NearByApp */ = {
 			isa = PBXGroup;
 			children = (
+				3D141BB027A6BB55003A13D9 /* View */,
 				3D489D9727A5020900634E6E /* Extension */,
 				3DED31F727A18FED00B351BB /* ViewModel */,
 				3DED31F427A18FB200B351BB /* ViewController */,
@@ -523,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D141BB227A6BB73003A13D9 /* DetailListTableViewCell.swift in Sources */,
 				3DFE3C3F27A04BFD00D5C101 /* LocationResponse.swift in Sources */,
 				3D9A4A9727A2C3AA00DB2CA2 /* MTMapViewError.swift in Sources */,
 				3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */,
