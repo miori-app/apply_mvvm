@@ -11,6 +11,7 @@ struct DetailCellData {
     let placeName : String
     let addressName : String
     let roadAddressName : String
+    let distance : String
     // 셀 탭했을때, 지도에 띄우기위해
     let point : MTMapPoint
 }
