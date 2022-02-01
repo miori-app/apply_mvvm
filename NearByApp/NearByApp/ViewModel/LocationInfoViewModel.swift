@@ -8,6 +8,7 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import UIKit
 
 struct LocationInfoViewModel {
     let disposeBag = DisposeBag()
@@ -37,18 +38,52 @@ struct LocationInfoViewModel {
     // 리스트 선택시 row값
     let detailListItemSelected = PublishRelay<Int>()
     //api데이터용
-    let documetData = PublishSubject<[DetailLocData?]>()
+    let documetData = PublishSubject<[DetailLocData]>()
     
-    init() {
+    init(_ networkMoel : LocationInfoModel = LocationInfoModel()) {
+        //MARK: 네트워크 통신으로 데이터 불러오기
+        let locationResult = mapCenterPoint
+        //mapCenterPoint를 가지고 왔을때
+            .flatMapLatest(networkMoel.getLocation)
+            .share()
+         
+        let locationResultValue = locationResult
+        //nil사라짐
+            .compactMap { data -> LocationResponse? in
+                guard case let .success(value) = data else {
+                    return nil
+                }
+                return value
+            }
+        
+        let locationResultError = locationResult
+            .compactMap { data -> String? in
+                switch data {
+                case let .failure(error) :
+                    return error.localizedDescription
+                case let .success(data) where data.documents.isEmpty :
+                    return "근방에 존재하지 않아요"
+                default :
+                    return nil
+                }
+            }
+        
+        locationResultValue
+            .map {
+                $0.documents
+            }
+            .bind(to: documetData)
+            .disposed(by: disposeBag)
+        
+
         //MARK: 지도의 중심점 선택
         /*
          api통신을 통해 json데이터를 받게되면,그중 선택된 리스트 값의 entity 중 x,y 값 string  -> 위도 경도 더블로 변경
          */
         let selectDetailListItem = detailListItemSelected
             .withLatestFrom(documetData) { $1[$0] }
-            .map { datas -> MTMapPoint in
-                guard let data = datas,
-                      let lon = Double(data.x),
+            .map { data -> MTMapPoint in
+                guard let lon = Double(data.x),
                       let lat = Double(data.y) else {
                           return MTMapPoint()
                       }
@@ -72,10 +107,23 @@ struct LocationInfoViewModel {
         setMapCenter = currentMapCenter
             .asSignal(onErrorSignalWith: .empty())
         
-        errorMessage = mapViewError.asObservable()
-            .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요")
+//        errorMessage = mapViewError.asObservable()
+//            .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요")
+        errorMessage = Observable
+            .merge(
+                locationResultError,
+                mapViewError.asObservable()
+            )
+            .asSignal(onErrorJustReturn: "잠시후 다시 시도해주세요")
         
-        detailListCellData = Driver.just([])
+        detailListCellData = documetData
+            .map(networkMoel.documentsToCellData)
+            .asDriver(onErrorDriveWith: .empty())
+        
+        documetData
+            .map {!$0.isEmpty}
+            .bind(to: detailListBackgroundViewModel.shouldHideStatusLabel)
+            .disposed(by: disposeBag)
         
         //selectPOIItem : 핑을 선택했을때 발생하는 이벤트
         scrollToSelectedLocation = selectPOIItem
