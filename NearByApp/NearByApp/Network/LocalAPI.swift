@@ -10,7 +10,7 @@ import Foundation
 //https://dapi.kakao.com/v2/local/search/category?category_group_code=PK6&x=127.110341&y=37.394225&radius=500&sort=distance
 // api를 어떤 방식으로 전달할지
 struct LocalAPI {
-    static let scheme = "htts"
+    static let scheme = "https"
     static let host = "dapi.kakao.com"
     static let path = "/v2/local/search/category.json"
     
