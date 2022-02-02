@@ -28,8 +28,8 @@ struct LocationInfoModel {
     }
     
     func docToMapPoint(_ doc : DetailLocData) -> MTMapPoint {
-        let latitude = Double(doc.x) ?? .zero
-        let longitude = Double(doc.y) ?? .zero
+        let longitude = Double(doc.x) ?? .zero
+        let latitude = Double(doc.y) ?? .zero
         return MTMapPoint(geoCoord: MTMapPointGeo(latitude: latitude, longitude: longitude))
     }
     
