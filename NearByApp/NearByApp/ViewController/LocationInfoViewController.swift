@@ -20,6 +20,7 @@ class LocationInfoViewController : UIViewController {
     let detailList = UITableView()
     let detailListBackgroundView = DetailListBackgroundView()
     let viewModel = LocationInfoViewModel()
+    let filterBtn = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ extension LocationInfoViewController {
             .disposed(by: disposeBag)
         
         viewModel.detailListCellData
-            .map { $0.compactMap {$0.point}}
+            .map { $0.compactMap { $0.point }}
         //mapView형식에서 핑뿌려주기
             .drive(self.rx.addPOIItemRx)
             .disposed(by: disposeBag)
@@ -80,10 +81,15 @@ extension LocationInfoViewController {
             .map {$0.row}
             .bind(to: viewModel.detailListItemSelected)
             .disposed(by: disposeBag)
+        
+        filterBtn.rx.tap
+            .bind(to: viewModel.sortBtnTapped)
+            .disposed(by: disposeBag)
     }
 
     private func attribute() {
-        self.title = "내 근처 카페 찾기"
+        self.title = "내 근처 편의점 찾기"
+        self.navigationItem.rightBarButtonItem = filterBtn
         view.backgroundColor = .white
         
         mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
@@ -137,13 +143,13 @@ extension LocationInfoViewController : CLLocationManagerDelegate {
 
 extension LocationInfoViewController : MTMapViewDelegate {
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
-        #if DEBUG
+        //#if DEBUG
         //디버그 모드일때, 시뮬레이터는 위치 모르니까
-        viewModel.currentLocation.accept(MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.394225, longitude: 127.110341)))
-        #else
+        //viewModel.currentLocation.accept(MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.394225, longitude: 127.110341)))
+        //#else
         //실제 위치 알때
         viewModel.currentLocation.accept(location)
-        #endif
+        //#endif
     }
     
     //MARK: Map 움직이고 난뒤
