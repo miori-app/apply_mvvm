@@ -39,6 +39,8 @@ struct LocationInfoViewModel {
     let detailListItemSelected = PublishRelay<Int>()
     //api데이터용
     let documetData = PublishSubject<[DetailLocData]>()
+    // navi rightbtn sort 눌렸을때
+    let sortBtnTapped = PublishRelay<Void>()
     
     init(_ networkMoel : LocationInfoModel = LocationInfoModel()) {
         //MARK: 네트워크 통신으로 데이터 불러오기
@@ -46,7 +48,7 @@ struct LocationInfoViewModel {
         //mapCenterPoint를 가지고 왔을때
             .flatMapLatest(networkMoel.getLocation)
             .share()
-         
+        
         let locationResultValue = locationResult
         //nil사라짐
             .compactMap { data -> LocationResponse? in
@@ -75,7 +77,7 @@ struct LocationInfoViewModel {
             .bind(to: documetData)
             .disposed(by: disposeBag)
         
-
+        
         //MARK: 지도의 중심점 선택
         /*
          api통신을 통해 json데이터를 받게되면,그중 선택된 리스트 값의 entity 중 x,y 값 string  -> 위도 경도 더블로 변경
@@ -91,7 +93,7 @@ struct LocationInfoViewModel {
                 return MTMapPoint(geoCoord: geoCoord)
             }
         let moveToCurrentLocation = currentLocationBtnTapped
-            // 현재위치 한번이라도 받은 이후에
+        // 현재위치 한번이라도 받은 이후에
             .withLatestFrom(currentLocation)
         
         let currentMapCenter  = Observable
@@ -107,8 +109,8 @@ struct LocationInfoViewModel {
         setMapCenter = currentMapCenter
             .asSignal(onErrorSignalWith: .empty())
         
-//        errorMessage = mapViewError.asObservable()
-//            .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요")
+        //        errorMessage = mapViewError.asObservable()
+        //            .asSignal(onErrorJustReturn: "잠시 후 다시 시도해주세요")
         errorMessage = Observable
             .merge(
                 locationResultError,

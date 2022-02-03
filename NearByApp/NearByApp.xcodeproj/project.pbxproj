@@ -15,6 +15,13 @@
 		3D141BBD27A8E330003A13D9 /* LocalNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D141BBC27A8E330003A13D9 /* LocalNetwork.swift */; };
 		3D141BC027A8E4BC003A13D9 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D141BBF27A8E4BC003A13D9 /* Secret.swift */; };
 		3D141BC427A8E857003A13D9 /* LocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D141BC327A8E857003A13D9 /* LocationInfoModel.swift */; };
+		3D24054427AABD3B00A6DC54 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D24054327AABD3B00A6DC54 /* Metal.framework */; };
+		3D24058A27AABF9400A6DC54 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24058927AABF9400A6DC54 /* RxBlocking */; };
+		3D24058C27AABF9400A6DC54 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24058B27AABF9400A6DC54 /* RxCocoa */; };
+		3D24058E27AABF9400A6DC54 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24058D27AABF9400A6DC54 /* RxRelay */; };
+		3D24059027AABF9400A6DC54 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24058F27AABF9400A6DC54 /* RxSwift */; };
+		3D24059227AABF9400A6DC54 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24059127AABF9400A6DC54 /* RxTest */; };
+		3D24059527AABFB600A6DC54 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D24059427AABFB600A6DC54 /* SnapKit */; };
 		3D489D9927A5022400634E6E /* MTMapView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D489D9827A5022400634E6E /* MTMapView+Rx.swift */; };
 		3D489D9B27A5062000634E6E /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D489D9A27A5062000634E6E /* UIViewController+Rx.swift */; };
 		3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F873B279C4DA9009FD93B /* AppDelegate.swift */; };
@@ -24,17 +31,12 @@
 		3D7F8753279C4DAB009FD93B /* NearByAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F8752279C4DAB009FD93B /* NearByAppTests.swift */; };
 		3D7F875D279C4DAB009FD93B /* NearByAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F875C279C4DAB009FD93B /* NearByAppUITests.swift */; };
 		3D7F875F279C4DAB009FD93B /* NearByAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F875E279C4DAB009FD93B /* NearByAppUITestsLaunchTests.swift */; };
-		3D9A4A7F27A2448100DB2CA2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A7E27A2448100DB2CA2 /* SnapKit */; };
-		3D9A4A8D27A2B6BA00DB2CA2 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A8C27A2B6BA00DB2CA2 /* RxBlocking */; };
-		3D9A4A8F27A2B6BA00DB2CA2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A8E27A2B6BA00DB2CA2 /* RxCocoa */; };
-		3D9A4A9127A2B6BA00DB2CA2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9027A2B6BA00DB2CA2 /* RxRelay */; };
-		3D9A4A9327A2B6BA00DB2CA2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9227A2B6BA00DB2CA2 /* RxSwift */; };
-		3D9A4A9527A2B6BA00DB2CA2 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 3D9A4A9427A2B6BA00DB2CA2 /* RxTest */; };
 		3D9A4A9727A2C3AA00DB2CA2 /* MTMapViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A4A9627A2C3AA00DB2CA2 /* MTMapViewError.swift */; };
+		3D9D10CA27AC1B5300D0856A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D10C927AC1B5300D0856A /* UIViewController.swift */; };
+		3D9D10CD27AC1BEB00D0856A /* AlertActionConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D10CC27AC1BEB00D0856A /* AlertActionConvertible.swift */; };
 		3DED31AB27A0512600B351BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1327A0429500D5C101 /* libsqlite3.tbd */; };
 		3DED31AC27A0513C00B351BB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1127A0428300D5C101 /* libc++.tbd */; };
 		3DED31AD27A0514500B351BB /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1227A0428C00D5C101 /* libxml2.tbd */; };
-		3DED31AE27A0517700B351BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0B27A0422400D5C101 /* OpenGLES.framework */; };
 		3DED31D627A054BB00B351BB /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DED31B127A054BB00B351BB /* map_pinup_custom@3x.png */; };
 		3DED31D727A054BB00B351BB /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DED31B227A054BB00B351BB /* map_pin_custom.png */; };
 		3DED31D827A054BB00B351BB /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DED31B327A054BB00B351BB /* shadow_balloon.png */; };
@@ -66,11 +68,11 @@
 		3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F227A0554000B351BB /* DetailCellData.swift */; };
 		3DED31F627A18FC700B351BB /* LocationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F527A18FC700B351BB /* LocationInfoViewController.swift */; };
 		3DED31F927A1900100B351BB /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED31F827A1900100B351BB /* LocationInfoViewModel.swift */; };
-		3DFE3C0C27A0422400D5C101 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0B27A0422400D5C101 /* OpenGLES.framework */; };
 		3DFE3C0E27A0426E00D5C101 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0D27A0426E00D5C101 /* CoreLocation.framework */; };
 		3DFE3C1027A0427900D5C101 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C0F27A0427900D5C101 /* QuartzCore.framework */; };
 		3DFE3C1527A0438B00D5C101 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFE3C1427A0438B00D5C101 /* SystemConfiguration.framework */; };
 		3DFE3C3F27A04BFD00D5C101 /* LocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFE3C3E27A04BFD00D5C101 /* LocationResponse.swift */; };
+		3DFF905827AAD575007B81C2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF905727AAD575007B81C2 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,7 @@
 		3D141BBC27A8E330003A13D9 /* LocalNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetwork.swift; sourceTree = "<group>"; };
 		3D141BBF27A8E4BC003A13D9 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		3D141BC327A8E857003A13D9 /* LocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoModel.swift; sourceTree = "<group>"; };
+		3D24054327AABD3B00A6DC54 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		3D489D9827A5022400634E6E /* MTMapView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTMapView+Rx.swift"; sourceTree = "<group>"; };
 		3D489D9A27A5062000634E6E /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		3D7F8738279C4DA9009FD93B /* NearByApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearByApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,8 @@
 		3D7F875C279C4DAB009FD93B /* NearByAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByAppUITests.swift; sourceTree = "<group>"; };
 		3D7F875E279C4DAB009FD93B /* NearByAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D9A4A9627A2C3AA00DB2CA2 /* MTMapViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTMapViewError.swift; sourceTree = "<group>"; };
+		3D9D10C927AC1B5300D0856A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		3D9D10CC27AC1BEB00D0856A /* AlertActionConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionConvertible.swift; sourceTree = "<group>"; };
 		3DED31B127A054BB00B351BB /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		3DED31B227A054BB00B351BB /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
 		3DED31B327A054BB00B351BB /* shadow_balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow_balloon.png; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 		3DFE3C1427A0438B00D5C101 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3DFE3C1627A043CC00D5C101 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3DFE3C3E27A04BFD00D5C101 /* LocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponse.swift; sourceTree = "<group>"; };
+		3DFF905727AAD575007B81C2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,18 +176,16 @@
 			files = (
 				3DED31AB27A0512600B351BB /* libsqlite3.tbd in Frameworks */,
 				3DED31AC27A0513C00B351BB /* libc++.tbd in Frameworks */,
+				3D24059527AABFB600A6DC54 /* SnapKit in Frameworks */,
+				3D24058C27AABF9400A6DC54 /* RxCocoa in Frameworks */,
 				3DFE3C1027A0427900D5C101 /* QuartzCore.framework in Frameworks */,
 				3DFE3C1527A0438B00D5C101 /* SystemConfiguration.framework in Frameworks */,
+				3D24059027AABF9400A6DC54 /* RxSwift in Frameworks */,
 				3DED31AD27A0514500B351BB /* libxml2.tbd in Frameworks */,
 				3DFE3C0E27A0426E00D5C101 /* CoreLocation.framework in Frameworks */,
-				3D9A4A9327A2B6BA00DB2CA2 /* RxSwift in Frameworks */,
-				3D9A4A8F27A2B6BA00DB2CA2 /* RxCocoa in Frameworks */,
-				3D9A4A8D27A2B6BA00DB2CA2 /* RxBlocking in Frameworks */,
-				3DFE3C0C27A0422400D5C101 /* OpenGLES.framework in Frameworks */,
-				3D9A4A9127A2B6BA00DB2CA2 /* RxRelay in Frameworks */,
+				3D24054427AABD3B00A6DC54 /* Metal.framework in Frameworks */,
 				3DED31F127A054BB00B351BB /* DaumMap.framework in Frameworks */,
-				3DED31AE27A0517700B351BB /* OpenGLES.framework in Frameworks */,
-				3D9A4A7F27A2448100DB2CA2 /* SnapKit in Frameworks */,
+				3D24058E27AABF9400A6DC54 /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9A4A9527A2B6BA00DB2CA2 /* RxTest in Frameworks */,
+				3D24059227AABF9400A6DC54 /* RxTest in Frameworks */,
+				3D24058A27AABF9400A6DC54 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +229,9 @@
 		3D141BBE27A8E4AD003A13D9 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				3D9D10CB27AC1BCB00D0856A /* Protocol */,
 				3D141BC127A8E4F3003A13D9 /* Secret */,
+				3DFF905727AAD575007B81C2 /* Constant.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				3D489D9827A5022400634E6E /* MTMapView+Rx.swift */,
 				3D489D9A27A5062000634E6E /* UIViewController+Rx.swift */,
 				3D141BB727A71950003A13D9 /* LocationInfoViewController+Rx.swift */,
+				3D9D10C927AC1B5300D0856A /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,6 +320,14 @@
 				3D7F875E279C4DAB009FD93B /* NearByAppUITestsLaunchTests.swift */,
 			);
 			path = NearByAppUITests;
+			sourceTree = "<group>";
+		};
+		3D9D10CB27AC1BCB00D0856A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3D9D10CC27AC1BEB00D0856A /* AlertActionConvertible.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		3DED31AF27A054BB00B351BB /* DaumMap.embeddedframework */ = {
@@ -394,6 +410,7 @@
 		3DFE3C0A27A0422400D5C101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D24054327AABD3B00A6DC54 /* Metal.framework */,
 				3DED31AF27A054BB00B351BB /* DaumMap.embeddedframework */,
 				3DFE3C1427A0438B00D5C101 /* SystemConfiguration.framework */,
 				3DFE3C1327A0429500D5C101 /* libsqlite3.tbd */,
@@ -433,11 +450,10 @@
 			);
 			name = NearByApp;
 			packageProductDependencies = (
-				3D9A4A7E27A2448100DB2CA2 /* SnapKit */,
-				3D9A4A8C27A2B6BA00DB2CA2 /* RxBlocking */,
-				3D9A4A8E27A2B6BA00DB2CA2 /* RxCocoa */,
-				3D9A4A9027A2B6BA00DB2CA2 /* RxRelay */,
-				3D9A4A9227A2B6BA00DB2CA2 /* RxSwift */,
+				3D24058B27AABF9400A6DC54 /* RxCocoa */,
+				3D24058D27AABF9400A6DC54 /* RxRelay */,
+				3D24058F27AABF9400A6DC54 /* RxSwift */,
+				3D24059427AABFB600A6DC54 /* SnapKit */,
 			);
 			productName = NearByApp;
 			productReference = 3D7F8738279C4DA9009FD93B /* NearByApp.app */;
@@ -458,7 +474,8 @@
 			);
 			name = NearByAppTests;
 			packageProductDependencies = (
-				3D9A4A9427A2B6BA00DB2CA2 /* RxTest */,
+				3D24058927AABF9400A6DC54 /* RxBlocking */,
+				3D24059127AABF9400A6DC54 /* RxTest */,
 			);
 			productName = NearByAppTests;
 			productReference = 3D7F874E279C4DAB009FD93B /* NearByAppTests.xctest */;
@@ -515,8 +532,8 @@
 			);
 			mainGroup = 3D7F872F279C4DA9009FD93B;
 			packageReferences = (
-				3D9A4A7D27A2448100DB2CA2 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3D24059327AABFB600A6DC54 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3D7F8739279C4DA9009FD93B /* Products */;
 			projectDirPath = "";
@@ -589,11 +606,14 @@
 			files = (
 				3D141BB227A6BB73003A13D9 /* DetailListTableViewCell.swift in Sources */,
 				3D141BC427A8E857003A13D9 /* LocationInfoModel.swift in Sources */,
+				3D9D10CD27AC1BEB00D0856A /* AlertActionConvertible.swift in Sources */,
 				3DFE3C3F27A04BFD00D5C101 /* LocationResponse.swift in Sources */,
+				3D9D10CA27AC1B5300D0856A /* UIViewController.swift in Sources */,
 				3D141BB427A6C168003A13D9 /* DetailListBackgroundViewModel.swift in Sources */,
 				3D9A4A9727A2C3AA00DB2CA2 /* MTMapViewError.swift in Sources */,
 				3DED31F327A0554000B351BB /* DetailCellData.swift in Sources */,
 				3D141BB827A71950003A13D9 /* LocationInfoViewController+Rx.swift in Sources */,
+				3DFF905827AAD575007B81C2 /* Constant.swift in Sources */,
 				3D141BBA27A8DFEF003A13D9 /* LocalAPI.swift in Sources */,
 				3D7F873C279C4DA9009FD93B /* AppDelegate.swift in Sources */,
 				3D489D9B27A5062000634E6E /* UIViewController+Rx.swift in Sources */,
@@ -975,15 +995,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3D9A4A7D27A2448100DB2CA2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
-			};
-		};
-		3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -991,38 +1003,46 @@
 				version = 6.5.0;
 			};
 		};
+		3D24059327AABFB600A6DC54 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3D9A4A7E27A2448100DB2CA2 /* SnapKit */ = {
+		3D24058927AABF9400A6DC54 /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A7D27A2448100DB2CA2 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		3D9A4A8C27A2B6BA00DB2CA2 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
 		};
-		3D9A4A8E27A2B6BA00DB2CA2 /* RxCocoa */ = {
+		3D24058B27AABF9400A6DC54 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		3D9A4A9027A2B6BA00DB2CA2 /* RxRelay */ = {
+		3D24058D27AABF9400A6DC54 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
-		3D9A4A9227A2B6BA00DB2CA2 /* RxSwift */ = {
+		3D24058F27AABF9400A6DC54 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		3D9A4A9427A2B6BA00DB2CA2 /* RxTest */ = {
+		3D24059127AABF9400A6DC54 /* RxTest */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3D9A4A8B27A2B6BA00DB2CA2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 3D24058827AABF9400A6DC54 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		3D24059427AABFB600A6DC54 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D24059327AABFB600A6DC54 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
