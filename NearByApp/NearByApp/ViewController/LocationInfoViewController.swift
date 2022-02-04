@@ -85,6 +85,14 @@ extension LocationInfoViewController {
         filterBtn.rx.tap
             .bind(to: viewModel.sortBtnTapped)
             .disposed(by: disposeBag)
+        
+        viewModel.shouldPresentAlert
+            .flatMapLatest { alert -> Signal<AlertAction> in
+                let alertController = UIAlertController(title: alert.title, message: alert.message, preferredStyle: alert.style)
+                return self.presentAlertController(alertController, actions: alert.actions)
+            }
+            .emit(to: viewModel.alertActionTapped)
+            .disposed(by: disposeBag)
     }
 
     private func attribute() {
