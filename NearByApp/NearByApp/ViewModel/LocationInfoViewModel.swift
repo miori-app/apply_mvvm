@@ -29,6 +29,8 @@ struct LocationInfoViewModel {
     //핑 선택시 테이블뷰 셀 인덱스로 이동위해
     let scrollToSelectedLocation : Signal<Int>
     
+    let shouldPresentAlert : Signal<UIViewController.Alert>
+    
     // view -> viewModel
     let currentLocation = PublishRelay<MTMapPoint>()
     let mapCenterPoint = PublishRelay<MTMapPoint>()
@@ -41,6 +43,9 @@ struct LocationInfoViewModel {
     let documetData = PublishSubject<[DetailLocData]>()
     // navi rightbtn sort 눌렸을때
     let sortBtnTapped = PublishRelay<Void>()
+    
+    // alert action 탭 했을때 이벤트 확인하기위함
+    let alertActionTapped = PublishRelay<UIViewController.AlertAction>()
     
     init(_ networkMoel : LocationInfoModel = LocationInfoModel()) {
         //MARK: 네트워크 통신으로 데이터 불러오기
@@ -131,5 +136,14 @@ struct LocationInfoViewModel {
         scrollToSelectedLocation = selectPOIItem
             .map { $0.tag }
             .asSignal(onErrorJustReturn: 0)
+        
+        //fileterBtn눌렀을때 sheet띄우게 하기위해서
+        let alertSheetForDistance = sortBtnTapped
+            .map { _ -> UIViewController.Alert in
+                return (title: nil, message: nil, actions: [.a,.b,.cancel], style: .actionSheet)
+            }
+        
+        self.shouldPresentAlert = alertSheetForDistance
+            .asSignal(onErrorSignalWith: .empty())
     }
 }
