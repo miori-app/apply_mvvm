@@ -15,8 +15,8 @@ struct LocationInfoModel {
         self.localNetwork = localNetwork
     }
     
-    func getLocation(by mapPoint: MTMapPoint) -> Single<Result<LocationResponse,URLError>> {
-        return localNetwork.getLocation(by: mapPoint)
+    func getLocation(mapPoint: MTMapPoint) -> Single<Result<LocationResponse,URLError>> {
+        return localNetwork.getLocation(mapPoint: mapPoint)
     }
     
     func documentsToCellData(_ data: [DetailLocData]) -> [DetailCellData] {
@@ -33,5 +33,15 @@ struct LocationInfoModel {
         return MTMapPoint(geoCoord: MTMapPointGeo(latitude: latitude, longitude: longitude))
     }
     
+    func applyNewDistance(type : UIViewController.AlertAction, mapPoint : MTMapPoint) {
+        switch type{
+        case .a:
+            print("500m")
+        case .b:
+            print("1000m")
+        default:
+            print("zz")
+        }
+    }
     
 }
