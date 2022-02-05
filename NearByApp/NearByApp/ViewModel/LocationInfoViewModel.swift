@@ -137,6 +137,18 @@ struct LocationInfoViewModel {
             .map { $0.tag }
             .asSignal(onErrorJustReturn: 0)
         
+        let distanceType = alertActionTapped
+            .filter {
+                switch $0 {
+                case .a,.b:
+                    return true
+                default :
+                    return false
+                }
+            }
+            .startWith(.a)
+        
+        
         //fileterBtn눌렀을때 sheet띄우게 하기위해서
         let alertSheetForDistance = sortBtnTapped
             .map { _ -> UIViewController.Alert in
