@@ -12,20 +12,22 @@ import Foundation
 struct LocalAPI {
     static let scheme = "https"
     static let host = "dapi.kakao.com"
-    static let path = "/v2/local/search/category.json"
+    //static let path = "/v2/local/search/category.json"
+    static let path = "/v2/local/search/keyword.json"
     
-    func getLocation(by mapPoint: MTMapPoint) -> URLComponents {
+    func getLocation(mapPoint: MTMapPoint) -> URLComponents {
         var componets = URLComponents()
         componets.scheme = LocalAPI.scheme
         componets.host = LocalAPI.host
         componets.path = LocalAPI.path
         
         componets.queryItems = [
-        URLQueryItem(name: "category_group_code", value: "PK6"),
+        //URLQueryItem(name: "category_group_code", value: "PK6"),
+        URLQueryItem(name: "query", value: "크로스핏"),
         URLQueryItem(name: "x", value: "\(mapPoint.mapPointGeo().longitude)"),
         URLQueryItem(name: "y", value: "\(mapPoint.mapPointGeo().latitude)"),
-        URLQueryItem(name: "radius", value: "500"),
-        URLQueryItem(name: "sort", value: "distance")
+        URLQueryItem(name: "radius", value: "2000")
+        //URLQueryItem(name: "sort", value: "distance")
         ]
         
         return componets
