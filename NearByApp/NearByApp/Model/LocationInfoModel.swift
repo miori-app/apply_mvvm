@@ -21,9 +21,10 @@ struct LocationInfoModel {
     
     func documentsToCellData(_ data: [DetailLocData]) -> [DetailCellData] {
         return data.map {
-            let addressName = $0.roadAddressName.isEmpty ? $0.addressName : $0.roadAddressName
+            //let addressName = $0.roadAddressName.isEmpty ? $0.addressName : $0.roadAddressName
+            let phoneNum = $0.phone.isEmpty ? "🥹 번호가 등록되지 않았어요" : "📞 \($0.phone)"
             let point = docToMapPoint($0)
-            return DetailCellData(placeName: $0.placeName, addressName: addressName, distance: $0.distance, point: point)
+            return DetailCellData(placeName: $0.placeName, phone: phoneNum, distance: $0.distance, point: point)
         }
     }
     
