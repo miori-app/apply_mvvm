@@ -26,10 +26,10 @@ extension Reactive where Base : LocationInfoViewController {
                     let mapPOIItem = MTMapPOIItem()
                     //지도상 좌표
                     mapPOIItem.mapPoint = point
-                    mapPOIItem.markerType = .bluePin
+                    mapPOIItem.customImage = UIImage(systemName: "figure.walk.circle.fill")
+                    mapPOIItem.markerType = .customImage
                     mapPOIItem.showAnimationType = .springFromGround
                     mapPOIItem.tag = offset
-                    
                     return mapPOIItem
                 }
             base.mapView.removeAllPOIItems()
