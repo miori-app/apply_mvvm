@@ -77,10 +77,15 @@ extension LocationInfoViewController {
             .emit(to: self.rx.showSelectedLocation)
             .disposed(by: disposeBag)
         
-        detailList.rx.itemSelected
-            .map {$0.row}
-            .bind(to: viewModel.detailListItemSelected)
-            .disposed(by: disposeBag)
+//        detailList.rx.itemSelected
+//            .map {$0.row}
+//            .bind(to: viewModel.detailListItemSelected)
+//            .disposed(by: disposeBag)
+        detailList.rx.modelSelected(DetailCellData.self)
+            .bind { _  in
+                let nextVC = DetailViewController()
+                self.navigationController?.pushViewController(nextVC, animated: false)
+            }
         
         filterBtn.rx.tap
             .bind(to: viewModel.sortBtnTapped)
@@ -96,14 +101,18 @@ extension LocationInfoViewController {
     }
 
     private func attribute() {
-        self.title = "내 근처 편의점 찾기"
-        self.navigationItem.rightBarButtonItem = filterBtn
+        //self.title = "드랍인 못참지"
+        //self.navigationItem.rightBarButtonItem = filterBtn
+        //navigationBar color 뷰 컬러와 동일하게 맞추기
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //navigationBar bottom bolder line 제거하기
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
         view.backgroundColor = .white
         
         mapView.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
-        currentLocBtn.setImage(UIImage(systemName: "location.fill"), for: .normal)
-        currentLocBtn.backgroundColor = .white
-        currentLocBtn.layer.cornerRadius = 20
+        //currentLocBtn.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        //currentLocBtn.backgroundColor = .white
+        //currentLocBtn.layer.cornerRadius = 20
         
         //cell register
         detailList.register(DetailListTableViewCell.self, forCellReuseIdentifier: DetailListTableViewCell.registerID)
@@ -117,7 +126,8 @@ extension LocationInfoViewController {
         }
         mapView.snp.makeConstraints {
             //navi 상단 밑에 위치
-            $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalTo(view.snp.centerY).offset(100)
         }
         currentLocBtn.snp.makeConstraints {
