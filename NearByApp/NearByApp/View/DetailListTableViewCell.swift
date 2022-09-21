@@ -56,8 +56,9 @@ class DetailListTableViewCell: UITableViewCell {
 
     func setData(_ dataEntity : DetailCellData) {
         placeNameLabel.text = dataEntity.placeName
-        addressLabel.text = dataEntity.addressName
-        distanceLabel.text = dataEntity.distance
+        //addressLabel.text = dataEntity.addressName
+        addressLabel.text = dataEntity.phone
+        distanceLabel.text = "\(dataEntity.distance) m"
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
